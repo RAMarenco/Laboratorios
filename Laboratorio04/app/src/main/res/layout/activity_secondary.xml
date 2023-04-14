@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SecondaryActivity">
+
+    <TextView
+        android:id="@+id/info2_TextView"
+        style="@style/TextAppearance.AppCompat.Headline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="39dp"
+        android:layout_marginEnd="39dp"
+        android:layout_marginBottom="@dimen/default_gap"
+        android:fontFamily="monospace"
+        android:text="Confirma tu información"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/name_TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/name_TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="@dimen/default_gap"
+        android:layout_marginBottom="@dimen/small_gap"
+        android:text="@string/nombre"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/email_TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/info2_TextView" />
+
+    <TextView
+        android:id="@+id/email_TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/small_gap"
+        android:text="@string/correo_electronico"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/phone_TextView"
+        app:layout_constraintStart_toStartOf="@+id/name_TextView"
+        app:layout_constraintTop_toBottomOf="@+id/name_TextView" />
+
+    <TextView
+        android:id="@+id/phone_TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/default_gap"
+        android:text="@string/numero_de_telefono"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/Compartir_Action"
+        app:layout_constraintStart_toStartOf="@+id/email_TextView"
+        app:layout_constraintTop_toBottomOf="@+id/email_TextView" />
+
+    <TextView
+        android:id="@+id/nameValue_TextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_gap"
+        android:layout_marginEnd="@dimen/default_gap"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/name_TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/name_TextView"
+        app:layout_constraintTop_toTopOf="@+id/name_TextView" />
+
+    <TextView
+        android:id="@+id/emailValue_TextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_gap"
+        android:layout_marginEnd="@dimen/default_gap"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/email_TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/email_TextView"
+        app:layout_constraintTop_toTopOf="@+id/email_TextView" />
+
+    <TextView
+        android:id="@+id/phoneValue_TextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_gap"
+        android:layout_marginEnd="@dimen/default_gap"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/phone_TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/phone_TextView"
+        app:layout_constraintTop_toTopOf="@+id/phone_TextView" />
+
+    <Button
+        android:id="@+id/Compartir_Action"
+        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/button_color"
+        android:elevation="5dp"
+        android:text="Compartir"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phone_TextView"
+        android:textColor="@color/black"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

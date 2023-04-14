@@ -1,0 +1,12 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Laboratorio04" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/main_color</item>
+        <item name="colorPrimaryVariant">@color/main_variant_color</item>
+        <item name="colorSecondary">@color/main_variant_color</item>
+        <item name="android:statusBarColor">@color/main_variant_color</item>
+    </style>
+
+    <style name="Theme.Laboratorio04" parent="Base.Theme.Laboratorio04" />
+</resources>
