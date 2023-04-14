@@ -1,7 +1,9 @@
 package com.example.laboratorio04
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 
 class SecondaryActivity : AppCompatActivity() {
@@ -11,6 +13,7 @@ class SecondaryActivity : AppCompatActivity() {
     private lateinit var nameValue: TextView
     private lateinit var emailValue: TextView
     private lateinit var phoneValue: TextView
+    private lateinit var compartirButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,6 +21,7 @@ class SecondaryActivity : AppCompatActivity() {
         bind()
         getIntentData()
         setIntentData()
+        addListener()
     }
 
     private fun getIntentData() {
@@ -32,9 +36,26 @@ class SecondaryActivity : AppCompatActivity() {
         phoneValue.text = phone
     }
 
+    private fun addListener() {
+        compartirButton.setOnClickListener {
+            val sendIntent: Intent = Intent().apply {
+                action = Intent.ACTION_SEND
+                putExtra(Intent.EXTRA_TEXT, "Nombre: ${name} " +
+                        "Correo: ${email} " +
+                        "Telefono ${phone}" )
+                type = "text/plain"
+            }
+
+            val shareIntent = Intent.createChooser(sendIntent, null)
+            startActivity(shareIntent)
+
+        }
+    }
+
     private fun bind() {
         nameValue = findViewById(R.id.nameValue_TextView)
         emailValue = findViewById(R.id.emailValue_TextView)
         phoneValue = findViewById(R.id.phoneValue_TextView)
+        compartirButton = findViewById(R.id.Compartir_Action)
     }
 }
