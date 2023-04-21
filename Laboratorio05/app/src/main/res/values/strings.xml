@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Laboratorio05</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="billboard_text">Billboard</string>
+    <string name="starwars_text">Star Wars episodio 3: La venganza de los Sith</string>
+    <string name="starwars_rating_text">9.8</string>
+    <string name="addMoview_action">+</string>
+    <string name="starwars_contentDesc">StarWars Episode 3</string>
+    <string name="harryPotter_rating">9.5</string>
+    <string name="name_Movie">Name</string>
+    <string name="category_Movie">Category</string>
+    <string name="description_Movie">Description</string>
+    <string name="calification_Movie">Calification</string>
+    <string name="new_movie_Text">New movie</string>
+    <string name="harryPotter_Text">Harry Potter y la Piedra Filosofal</string>
+</resources>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/billBoardFragment">
+
+    <fragment
+        android:id="@+id/billBoardFragment"
+        android:name="com.rmarenco.laboratorio05.BillBoardFragment"
+        android:label="fragment_bill_board"
+        tools:layout="@layout/fragment_bill_board" >
+        <action
+            android:id="@+id/action_billBoardFragment_to_movieDescriptionFragment"
+            app:destination="@id/movieDescriptionFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:popEnterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_billBoardFragment_to_newMovieFragment"
+            app:destination="@id/newMovieFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:popEnterAnim="@android:anim/fade_in" />
+    </fragment>
+    <fragment
+        android:id="@+id/movieDescriptionFragment"
+        android:name="com.rmarenco.laboratorio05.MovieDescriptionFragment"
+        android:label="fragment_movie_description"
+        tools:layout="@layout/fragment_movie_description" />
+    <fragment
+        android:id="@+id/newMovieFragment"
+        android:name="com.rmarenco.laboratorio05.NewMovieFragment"
+        android:label="fragment_new_movie"
+        tools:layout="@layout/fragment_new_movie" />
+</navigation>
