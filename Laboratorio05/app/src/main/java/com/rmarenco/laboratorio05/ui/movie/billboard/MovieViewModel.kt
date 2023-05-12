@@ -1,5 +1,6 @@
-package com.rmarenco.laboratorio05.ui.movie
+package com.rmarenco.laboratorio05.ui.movie.billboard
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY
@@ -9,7 +10,7 @@ import com.rmarenco.laboratorio05.MovieReviewerApplication
 import com.rmarenco.laboratorio05.data.model.MovieModel
 import com.rmarenco.laboratorio05.repositories.MovieRepository
 
-class MovieViewModel (private val repository: MovieRepository) : ViewModel() {
+class MovieViewModel(private val repository: MovieRepository) : ViewModel() {
     var name = MutableLiveData("")
     var category = MutableLiveData("")
     var description = MutableLiveData("")
@@ -18,7 +19,7 @@ class MovieViewModel (private val repository: MovieRepository) : ViewModel() {
 
     fun getMovies() = repository.getMovies()
 
-    fun addMovies(movie: MovieModel) = repository.addMovies(movie)
+    private fun addMovies(movie: MovieModel) = repository.addMovies(movie)
 
     fun createMovie() {
         if (!validateData()) {
@@ -50,7 +51,7 @@ class MovieViewModel (private val repository: MovieRepository) : ViewModel() {
         return true
     }
 
-    private fun clearData() {
+    fun clearData() {
         name.value = ""
         category.value = ""
         description.value = ""
@@ -59,6 +60,15 @@ class MovieViewModel (private val repository: MovieRepository) : ViewModel() {
 
     fun clearStatus() {
         status.value = INACTIVE
+    }
+
+    fun setSelectedMovie(movie: MovieModel) {
+        Log.d("dubu", movie.name)
+        name.value = movie.name
+        Log.d("daba", name.value.toString())
+        category.value = movie.category
+        description.value = movie.description
+        qualification.value = movie.qualification
     }
 
     companion object {

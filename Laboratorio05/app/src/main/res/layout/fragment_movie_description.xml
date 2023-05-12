@@ -5,29 +5,29 @@
 
     <data>
         <variable
-            name="viewModel"
-            type="com.rmarenco.laboratorio05.ui.movie.MovieViewModel" />
+            name="viewmodel"
+            type="com.rmarenco.laboratorio05.ui.movie.billboard.MovieViewModel"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/backgroundLayout"
-        tools:context=".ui.movie.MovieDescriptionFragment">
+        tools:context=".ui.movie.moviedescription.MovieDescriptionFragment">
 
         <TextView
-            android:id="@+id/starwars_rating2"
+            android:id="@+id/movieDesc_rating"
             style="@style/TextAppearance.Material3.HeadlineSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/large_gap"
-            android:text="@string/starwars_rating_text"
+            android:text="@={viewmodel.qualification}"
             android:textColor="@color/calification"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/textView2"
-            app:layout_constraintEnd_toEndOf="@+id/textView"
-            app:layout_constraintStart_toEndOf="@+id/textView2"
-            app:layout_constraintTop_toTopOf="@+id/textView2" />
+            app:layout_constraintBottom_toBottomOf="@+id/movieDesc_category"
+            app:layout_constraintEnd_toEndOf="@+id/movieDesc_title"
+            app:layout_constraintStart_toEndOf="@+id/movieDesc_category"
+            app:layout_constraintTop_toTopOf="@+id/movieDesc_category" />
 
         <ImageView
             android:id="@+id/imageView"
@@ -40,19 +40,19 @@
             android:paddingHorizontal="@dimen/huge_gap"
             android:paddingVertical="@dimen/huge_gap"
             android:scaleType="centerCrop"
-            android:src="@drawable/star_wars"
+            android:src="@drawable/empty"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/movieDesc_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/small_gap"
             android:layout_marginTop="@dimen/medium_gap"
             android:layout_marginEnd="@dimen/small_gap"
-            android:text="@string/starwars_text"
+            android:text="@={viewmodel.name}"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -61,33 +61,33 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/movieDesc_category"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/small_gap"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="@dimen/small_gap"
-            android:text="Ciencia Ficción"
+            android:text="@={viewmodel.category}"
             android:textColor="@color/white"
             android:textSize="18sp"
-            app:layout_constraintEnd_toStartOf="@+id/starwars_rating2"
+            app:layout_constraintEnd_toStartOf="@+id/movieDesc_rating"
             app:layout_constraintHorizontal_bias="0.25"
-            app:layout_constraintStart_toStartOf="@+id/textView"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintStart_toStartOf="@+id/movieDesc_title"
+            app:layout_constraintTop_toBottomOf="@+id/movieDesc_title" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/movieDesc_description"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/medium_gap"
             android:layout_marginTop="@dimen/small_gap"
             android:layout_marginEnd="@dimen/medium_gap"
-            android:text="La película se centra en el personaje de Anakin Skywalker quien está siendo tentado por el Lado Oscuro de la Fuerza mientras el Imperio Galáctico comienza a surgir. La trama también muestra la caída de la República Galáctica y el ascenso del Emperador Palpatine."
+            android:text="@={viewmodel.description}"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/movieDesc_title"
             app:layout_constraintVertical_bias="0.16000003" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

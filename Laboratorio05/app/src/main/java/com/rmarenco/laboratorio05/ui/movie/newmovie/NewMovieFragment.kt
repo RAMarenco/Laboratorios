@@ -1,20 +1,16 @@
-package com.rmarenco.laboratorio05.ui.movie
+package com.rmarenco.laboratorio05.ui.movie.newmovie
 
-import android.graphics.Movie
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.google.android.material.textfield.TextInputLayout
-import com.rmarenco.laboratorio05.R
-import com.rmarenco.laboratorio05.data.model.MovieModel
 import com.rmarenco.laboratorio05.databinding.FragmentNewMovieBinding
+import com.rmarenco.laboratorio05.ui.movie.billboard.MovieViewModel
 
 class NewMovieFragment : Fragment() {
     private lateinit var binding: FragmentNewMovieBinding
@@ -33,9 +29,8 @@ class NewMovieFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        observeStatus()
-        binding.lifecycleOwner = viewLifecycleOwner
         setViewModel()
+        observeStatus()
     }
 
     private fun setViewModel() {
